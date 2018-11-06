@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>russellthackston.me</title>
+	<title>Reset Password</title>
 	<meta name="description" content="Russell Thackston's personal website for IT 5233">
 	<meta name="author" content="Russell Thackston">
 	<link rel="stylesheet" href="css/style.css">
@@ -39,11 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<main id="wrapper">
 		<h2>Reset Password</h2>
 		<?php include('include/messages.php'); ?>
-		<form method="post" action="reset.php">
-			<input type="text" name="usernameOrEmail" id="usernameOrEmail" placeholder="Enter your username or email address" required="required" size="40" />
-			<input type="submit" value="Submit" />
-		</form>
-		<a href="register.php">Need to create an account?</a>
+		<div>
+			<form method="post" action="reset.php">
+				<input type="text" name="usernameOrEmail" id="usernameOrEmail" placeholder="Enter your username or email address" required="required" size="40" />
+				<input type="submit" value="Submit" />
+			</form>
+		</div>
+		<p><a href="register.php">Need to create an account?</a></p>
 	</main>
 	<?php include 'include/footer.php'; ?>
 	<script src="js/site.js"></script>

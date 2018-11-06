@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>russellthackston.me</title>
+	<title>Register</title>
 	<meta name="description" content="Russell Thackston's personal website for IT 5233">
 	<meta name="author" content="Russell Thackston">
 	<link rel="stylesheet" href="css/style.css">
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<input type="submit" value="Register" />
 		</form>
 	</div>
-	<a href="login.php">Already a member?</a>
+	<p><a href="login.php">Already a member?</a></p>
 	<?php include 'include/footer.php'; ?>
 	<script src="js/site.js"></script>
 </body>
