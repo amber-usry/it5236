@@ -1,0 +1,6 @@
+{
+	"dbhost" 	 : "mysqlforlambdatest.czx9deednziq.us-east-1.rds.amazonaws.com",
+	"dbuser" 	 : "LambdaTestUser",
+	"dbpassword" : "Scissors&Ice*",
+	"dbname" 	 : "it5236"
+}
