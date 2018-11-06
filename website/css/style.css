@@ -1,5 +1,27 @@
 body {
 	margin: 15px 15px 15px 15px;
+	background-color: #d7dbe2;
+	/*background-image: url("css/images/bubbles.jpg");*/
+}
+
+h1 {
+    color: purple;
+    text-align: center;
+}
+
+h2 {
+	color: purple;
+	padding-left: 80px;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+	padding-left: 100px;
+}
+
+div{
+	padding-left: 100px;
 }
 
 div.nav {
