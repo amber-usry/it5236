@@ -756,7 +756,7 @@ class Application {
         return $regs;
     }*/
 	
-    
+    /*
     public function getUserRegistrations($userid, &$errors) {
         
         // Assume an empty list of regs
@@ -765,13 +765,20 @@ class Application {
         // Connect to the database
         $dbh = $this->getConnection();
         
-        // Construct a SQL statement to perform the select operation
-        $sql = "SELECT registrationcode FROM userregistrations WHERE userid = :userid";
-        
-        // Run the SQL select and capture the result code
-        $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':userid', $userid);
-        $result = $stmt->execute();
+        $url = " https://dm62wlj1rh.execute-api.us-east-1.amazonaws.com/default/getuserregistrations";
+			$data = array(
+				'userid'=>$userid
+			);
+			$data_json = json_encode($data);
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','x-api-key: q7vibIXKZu3KZHOGAaxa2aRjPv5ecwm37tOZmhbN','Content-Length: ' . strlen($data_json)));
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response  = curl_exec($ch);
+			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
         
         // If the query did not run successfully, add an error message to the list
         if ($result === FALSE) {
@@ -795,8 +802,8 @@ class Application {
         
         // Return the list of users
         return $regs;
-    }
-    /*
+    }*/
+    
 	public function getUserRegistrations($userid, &$errors) {
         
         // Assume an empty list of regs
@@ -836,7 +843,7 @@ class Application {
         // Return the list of users
         return $regs;
     }
-	*/
+	/*
     // Updates a single user in the database and will return the $errors array listing any errors encountered
     public function updateUserPassword($userid, $password, &$errors) {
         
@@ -854,15 +861,19 @@ class Application {
             // Hash the user's password
             $passwordhash = password_hash($password, PASSWORD_DEFAULT);
             
-            // Construct a SQL statement to perform the select operation
-            $sql = "UPDATE users SET passwordhash=:passwordhash " .
-                "WHERE userid = :userid";
-            
-            // Run the SQL select and capture the result code
-            $stmt = $dbh->prepare($sql);
-            $stmt->bindParam(":passwordhash", $passwordhash);
-            $stmt->bindParam(":userid", $userid);
-            $result = $stmt->execute();
+            $url = " https://dm62wlj1rh.execute-api.us-east-1.amazonaws.com/default/updateuserpassword";
+			$data = array(
+				'userid'=>$userid
+			);
+			$data_json = json_encode($data);
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','x-api-key: q7vibIXKZu3KZHOGAaxa2aRjPv5ecwm37tOZmhbN','Content-Length: ' . strlen($data_json)));
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response  = curl_exec($ch);
+			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             
             // If the query did not run successfully, add an error message to the list
             if ($result === FALSE) {
@@ -888,8 +899,8 @@ class Application {
         } else {
             return FALSE;
         }
-    }
-    /*
+    }*/
+    
 	public function updateUserPassword($userid, $password, &$errors) {
         
         // Validate the user input
@@ -941,20 +952,26 @@ class Application {
             return FALSE;
         }
     }
-	*/
+	
     // Removes the specified password reset entry in the database, as well as any expired ones
     // Does not retrun errors, as the user should not be informed of these problems
     protected function clearPasswordResetRecords($passwordresetid) {
         
         $dbh = $this->getConnection();
         
-        // Construct a SQL statement to perform the insert operation
-        $sql = "DELETE FROM passwordreset WHERE passwordresetid = :passwordresetid OR expires < NOW()";
-        
-        // Run the SQL select and capture the result code
-        $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(":passwordresetid", $passwordresetid);
-        $stmt->execute();
+        $url = " https://dm62wlj1rh.execute-api.us-east-1.amazonaws.com/default/clearpasswordresetrecords";
+			$data = array(
+				'passwordresetid'=>$userid
+			);
+			$data_json = json_encode($data);
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','x-api-key: q7vibIXKZu3KZHOGAaxa2aRjPv5ecwm37tOZmhbN','Content-Length: ' . strlen($data_json)));
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response  = curl_exec($ch);
+			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         
         // Close the connection
         $dbh = NULL;
