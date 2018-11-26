@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<title>One Time Password</title>
 	<meta name="description" content="Russell Thackston's personal website for IT 5233">
 	<meta name="author" content="Russell Thackston">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 

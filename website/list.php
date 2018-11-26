@@ -58,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<title>russellthackston.me</title>
 	<meta name="description" content="Russell Thackston's personal website for IT 5233">
 	<meta name="author" content="Russell Thackston">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -66,8 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	2. If no errors display things -->
 <body>
 	<?php include 'include/header.php'; ?>
-	<h2>My Things</h2>
-	
+	<h2>My Episodes</h2>
+	<br>
 	<?php include('include/messages.php'); ?>
 	
 	<div class="search">
@@ -83,24 +84,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<?php } ?>
 		<?php foreach ($things as $thing) { ?>
 		<li>
-			<a href="thing.php?thingid=<?php echo $thing['thingid']; ?>"><?php echo $thing['thingname']; ?></a>
+			<a href="thing.php?thingid=<?php echo $thing['thingid']; ?>" style="padding-left:80px; font-size:25px;"><?php echo $thing['thingname']; ?></a>
 			<span class="author"><?php echo $thing['thingcreated']; ?></span>
 		</li>
 		<?php } ?>
 
 	</ul>
+	<br>
+	<br>
 	<div class="newthing">
 		<form enctype="multipart/form-data" method="post" action="list.php">
-			<input type="text" name="name" id="name" size="81" placeholder="Enter a thing name" value="<?php echo $name; ?>" />
+			<input type="text" name="name" id="name" size="81" placeholder="Enter in Your Diary" value="<?php echo $name; ?>" />
 			<br/>
 			<label for="attachment">Add an image, PDF, etc.</label>
 			<input id="attachment" name="attachment" type="file">
 			<br/>
-			<input type="submit" name="start" value="Create Thing" />
+			<input type="submit" name="start" value="Share Episode" />
 			<input type="submit" name="cancel" value="Cancel" />
 		</form>
 	</div>
 	<?php include 'include/footer.php'; ?>
 	<script src="js/site.js"></script>
+	<img src="css/images/diary.png" alt="diary" style="float:right;">
 </body>
 </html>

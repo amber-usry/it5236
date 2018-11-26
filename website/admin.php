@@ -48,6 +48,7 @@ $attachmentTypes = $app->getAttachmentTypes($errors);
 	<title>russellthackston.me</title>
 	<meta name="description" content="Russell Thackston's personal website for IT 5233">
 	<meta name="author" content="Russell Thackston">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -55,19 +56,19 @@ $attachmentTypes = $app->getAttachmentTypes($errors);
 	<?php include 'include/header.php'; ?>
 	<h2>Admin Functions</h2>
 	<?php include 'include/messages.php'; ?>
-	<h3>User List</h3>
+	<h3 style="padding-left:80px;">User List</h3>
 	<ul class="users">
 		<?php foreach($users as $user) { ?>
-			<li><a href="editprofile.php?userid=<?php echo $user['userid']; ?>"><?php echo $user['username']; ?></a></li>
+			<li style="padding-left:80px;"><a href="editprofile.php?userid=<?php echo $user['userid']; ?>"><?php echo $user['username']; ?></a></li>
 		<?php } ?>
 	</ul>
-	<h3>Valid Attachment Types</h3>
+	<h3 style="padding-left:80px;">Valid Attachment Types</h3>
 	<ul class="attachmenttypes">
 		<?php foreach($attachmentTypes as $attachmentType) { ?>
-			<li><?php echo $attachmentType['name']; ?> [<?php echo $attachmentType['extension']; ?>]</li>
+			<li style="padding-left:80px;"><?php echo $attachmentType['name']; ?> [<?php echo $attachmentType['extension']; ?>]</li>
 		<?php } ?>
 		<?php if (sizeof($attachmentTypes) == 0) { ?>
-			<li>No attachment types found in the database</li>
+			<li style="padding-left:80px;">No attachment types found in the database</li>
 		<?php } ?>
 	</ul>
 	<div class="newattachmenttype">
@@ -85,5 +86,6 @@ $attachmentTypes = $app->getAttachmentTypes($errors);
 	</div>
 	<?php include 'include/footer.php'; ?>
 	<script src="js/site.js"></script>
+	<img src="css/images/diary.png" alt="diary" style="float:right;">
 </body>
 </html>

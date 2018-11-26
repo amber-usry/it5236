@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<title>russellthackston.me</title>
 	<meta name="description" content="Russell Thackston's personal website for IT 5233">
 	<meta name="author" content="Russell Thackston">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -57,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<input type="hidden" name="passwordrequestid" id="passwordrequestid" value="<?php echo $passwordrequestid; ?>" />
 		</form>
 	</main>
+	<img src="css/images/diary.png" alt="diary" style="float:right;">
 	<?php include 'include/footer.php'; ?>
 </body>
 </html>

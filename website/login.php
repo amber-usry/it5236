@@ -59,9 +59,10 @@ if (isset($_GET['register']) && $_GET['register']== 'success') {
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>russellthackston.me</title>
+	<title>Login</title>
 	<meta name="description" content="Russell Thackston's personal website for IT 5233">
 	<meta name="author" content="Russell Thackston">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -88,10 +89,11 @@ if (isset($_GET['register']) && $_GET['register']== 'success') {
 			<input type="submit" value="Login" name="login" />
 		</form>
 	</div>
-	<a href="register.php">Need to create an account?</a>
-	<br/>
-	<a href="reset.php">Forgot your password?</a>
+	<p><a href="register.php">Need to create an account?</a>
+	<br/></p>
+	<p><a href="reset.php">Forgot your password?</a></p>
 	<?php include 'include/footer.php'; ?>
 	<script src="js/site.js"></script>
+	<img src="css/images/diary.png" alt="diary" style="float:right;">
 </body>
 </html>
